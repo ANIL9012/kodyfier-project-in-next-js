@@ -198,26 +198,22 @@ export default function TestimonialSlider() {
 function TestimonialCard({ feedback }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col">
-      {/* Rating Number - 66 */}
       <div className="mb-3">
         <span className="text-4xl font-bold text-gray-800">
           {feedback.rating}
         </span>
       </div>
 
-      {/* Feedback Text */}
       <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-grow">
         {feedback.feedback}
       </p>
 
-      {/* Divider */}
       <div className="border-t border-gray-100 pt-4 mt-auto">
         {/* Name */}
         <h4 className="font-semibold text-gray-900 text-base">
           {feedback.name}
         </h4>
 
-        {/* Role */}
         <p className="text-xs text-gray-500 mt-0.5 mb-2">{feedback.role}</p>
 
         {/* Star Rating */}
