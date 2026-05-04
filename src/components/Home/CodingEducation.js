@@ -144,16 +144,13 @@ const CodingEducation = () => {
 
           {/* RIGHT CONTENT */}
           <div className="bg-[#cfe3d9] px-6 py-10 md:px-10 md:py-35 rounded-md">
-            {/* Heading */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug text-gray-900">
               <span className="text-[#43b97f]">Practical</span> Oriented
               Software Training Institute In Pune
             </h2>
 
-            {/* Underline */}
             <div className="w-20 h-1 bg-[#43b97f] mt-4 mb-6 rounded"></div>
 
-            {/* Paragraph */}
             <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-4">
               A practical oriented software institute in Pune immerses hands on
               dynamic learning with live sessions, Webinars and structured

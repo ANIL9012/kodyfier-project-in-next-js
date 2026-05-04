@@ -194,7 +194,6 @@ export default function TestimonialSlider() {
   );
 }
 
-// Testimonial Card Component
 function TestimonialCard({ feedback }) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col">

@@ -229,7 +229,6 @@ export default function Slider() {
   );
 }
 
-// Course Card Component
 function CourseCard({ course }) {
   const [imageError, setImageError] = useState(false);
 

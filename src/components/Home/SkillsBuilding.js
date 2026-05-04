@@ -92,9 +92,7 @@ export default function SkillsBuilding() {
 
       <section className="w-full bg-white">
         <div className="container mx-auto flex justify-center">
-          {/* Quote Card Container */}
           <div className="relative w-full bg-green-50 rounded-lg p-8 md:p-12 shadow-sm">
-            {/* Quote Icon Top Left */}
             <div className="absolute -top-4 ">
               <Image
                 src="/images/homeimg/quote.svg"
@@ -105,7 +103,6 @@ export default function SkillsBuilding() {
               />
             </div>
 
-            {/* Content */}
             <div className="text-center px-4 md:px-8">
               <p className="text-xl md:text-3xl lg:text-4xl text-[#545150] font-medium leading-relaxed">
                 When educating the minds of our youth, we must not{" "}
@@ -125,8 +122,6 @@ export default function SkillsBuilding() {
                 />
               </div>
             </div>
-
-            {/* Quote Icon Bottom Right */}
 
             <div className="absolute -bottom-4 right-4">
               <Image
