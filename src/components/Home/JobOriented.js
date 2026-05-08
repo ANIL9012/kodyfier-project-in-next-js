@@ -3,9 +3,7 @@ import Image from "next/image";
 export default function JobOriented() {
   return (
     <section className="w-full bg-[#cfe3d9] py-12 md:py-20 px-4">
-      {/* IMPORTANT: items-stretch */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
-        {/* LEFT CONTENT */}
         <div className="flex flex-col justify-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
             <span className="text-[#43b97f]">Job</span> Oriented Programming{" "}
@@ -36,12 +34,11 @@ export default function JobOriented() {
           </button>
         </div>
 
-        {/* RIGHT IMAGE (SAME HEIGHT) */}
         <div className="relative w-full h-full min-h-[300px]">
           <Image
             src="/images/homeimg/about.webp"
             alt="students"
-            fill // ⭐ IMPORTANT
+            fill
             className="object-cover rounded-lg shadow-lg"
           />
         </div>

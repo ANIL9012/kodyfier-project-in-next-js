@@ -125,12 +125,9 @@ const CodingEducation = () => {
       </section>
       <section className="w-full py-12 md:py-20 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-[0.9fr_1.5fr] gap-4 md:gap-6 items-center">
-          {/* LEFT IMAGE */}
           <div className="relative flex justify-center md:justify-start h-full">
-            {/* Background Shape */}
             <div className="absolute inset-y-0 left-0 w-[260px] bg-[#dceee5] rounded-xl -left-6 hidden md:block"></div>
 
-            {/* Main Image */}
             <div className="relative z-10 rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/images/homeimg/writing.webp"
@@ -142,7 +139,6 @@ const CodingEducation = () => {
             </div>
           </div>
 
-          {/* RIGHT CONTENT */}
           <div className="bg-[#cfe3d9] px-6 py-10 md:px-10 md:py-35 rounded-md">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug text-gray-900">
               <span className="text-[#43b97f]">Practical</span> Oriented
