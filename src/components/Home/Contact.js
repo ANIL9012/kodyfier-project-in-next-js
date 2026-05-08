@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -9,22 +10,62 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
 
+  // Handle Input Change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
+  // Handle Form Submit
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Console Data
+    console.log("Form Submitted Data:");
+    console.log("Name:", formData.name);
+    console.log("Mobile:", formData.mobile);
+    console.log("Email:", formData.email);
+    console.log("Message:", formData.message);
+
+    // WhatsApp Message
+    const whatsappMessage = `Hello,
+
+Name: ${formData.name}
+Mobile: ${formData.mobile}
+Email: ${formData.email}
+
+Message:
+${formData.message}`;
+
+    // Open WhatsApp
+    window.open(
+      `https://wa.me/919411894517?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank",
+    );
+
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", mobile: "", email: "", message: "" });
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+
+    // Reset Form
+    setFormData({
+      name: "",
+      mobile: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-white flex items-center justify-center overflow-hidden px-4 py-16 sm:px-6 lg:px-8">
-      {/* Background wave bottom-left */}
+    <section className="relative w-full bg-white overflow-hidden px-4 py-14 md:py-16 lg:py-20 sm:px-6 lg:px-8">
+      {/* Bottom Wave */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-full">
         <svg
           viewBox="0 0 1440 220"
@@ -39,28 +80,50 @@ export default function ContactSection() {
         </svg>
       </div>
 
-      {/* Scroll-to-top button */}
-
       <div className="relative z-10 mx-auto w-full max-w-6xl">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Left — Form */}
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          {/* Left Section */}
           <div className="w-full">
-            <h2 className="mb-8 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="mb-8 text-3xl md:text-4xl font-extrabold text-gray-900">
               Contact Us
             </h2>
 
+            {/* WhatsApp Card */}
+            <a
+              href="https://wa.me/919411894517"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-6 flex items-center gap-4 rounded-2xl border border-green-200 bg-green-50 px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:bg-green-100"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md">
+                <FaWhatsapp size={26} />
+              </div>
+
+              <div>
+                <p className="text-sm font-medium text-gray-500">
+                  Chat on WhatsApp
+                </p>
+
+                <h3 className="text-lg font-bold text-gray-900">
+                  +91 9411894517
+                </h3>
+              </div>
+            </a>
+
+            {/* Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              {/* Row: Name + Mobile */}
+              {/* Name + Mobile */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                   required
-                  className="w-full rounded-lg border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
+                  className="w-full rounded-xl border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
                 />
+
                 <input
                   type="tel"
                   name="mobile"
@@ -68,7 +131,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   placeholder="Mobile Number"
                   required
-                  className="w-full rounded-lg border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
+                  className="w-full rounded-xl border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
                 />
               </div>
 
@@ -78,9 +141,9 @@ export default function ContactSection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="name@example.com"
+                placeholder="Email Address"
                 required
-                className="w-full rounded-lg border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
+                className="w-full rounded-xl border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
               />
 
               {/* Message */}
@@ -88,41 +151,40 @@ export default function ContactSection() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Write your message here.."
+                placeholder="Write your message..."
                 required
                 rows={7}
-                className="w-full resize-y rounded-lg border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 placeholder-gray-400 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
+                className="w-full resize-none rounded-xl border border-[#7de0ae] bg-[#f0fdf6] px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#3dba7a] focus:ring-2 focus:ring-[#3dba7a]/30"
               />
 
-              {/* Send Button */}
+              {/* Submit Button */}
               <div>
                 <button
                   type="submit"
-                  className="rounded-lg bg-[#3dba7a] px-8 py-3 text-sm font-semibold text-white shadow transition hover:bg-[#2fa868] active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#3dba7a]/50"
+                  className="rounded-xl bg-[#25D366] px-8 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#1ebe5d] active:scale-95"
                 >
-                  {submitted ? "Sent ✓" : "Send"}
+                  {submitted ? "Opening WhatsApp..." : "Send Message"}
                 </button>
               </div>
 
+              {/* Success Message */}
               {submitted && (
-                <p className="text-sm font-medium text-[#3dba7a]">
-                  Your message has been sent successfully!
+                <p className="text-sm font-medium text-[#25D366]">
+                  Redirecting to WhatsApp...
                 </p>
               )}
             </form>
           </div>
 
-          {/* Right — Image */}
+          {/* Right Image */}
           <div className="flex w-full justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm overflow-hidden rounded-2xl sm:max-w-md lg:max-w-full">
-              {/* Teal overlay tint */}
-              <div className="absolute inset-0 rounded-2xl bg-[#c6f4de]/30 mix-blend-multiply" />
-              {/* Replace src with your actual image path, e.g. /images/contact-photo.jpg */}
+            <div className="relative w-full max-w-sm overflow-hidden rounded-3xl sm:max-w-md lg:max-w-[520px]">
+              <div className="absolute inset-0 rounded-3xl bg-[#c6f4de]/30 mix-blend-multiply" />
+
               <img
                 src="/images/homeimg/contact.webp"
-                alt="Person working at desk"
-                className="h-auto w-full rounded-2xl object-cover"
-                style={{ maxHeight: "520px" }}
+                alt="Contact"
+                className="w-full rounded-3xl object-cover"
               />
             </div>
           </div>

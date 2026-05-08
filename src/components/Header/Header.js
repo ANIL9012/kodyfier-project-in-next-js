@@ -14,19 +14,23 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold">
-            {/* <span className="text-black">Kody</span>
-            <span className="text-green-500">Fier</span> */}
-
-            <img src="/images/homeimg/logo.svg" alt="logo" />
+            <img
+              src="/images/homeimg/logo.svg"
+              alt="logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-10 text-[17px] font-medium text-gray-600">
-            <Link href="/" className="hover:text-black transition block">
+            <Link href="/" className="hover:text-black transition duration-300">
               Home
             </Link>
 
-            <Link href="/about" className="hover:text-black transition block">
+            <Link
+              href="/about"
+              className="hover:text-black transition duration-300"
+            >
               About
             </Link>
 
@@ -36,12 +40,12 @@ export default function Header() {
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-black transition block">
+              <div className="flex items-center gap-1 cursor-pointer hover:text-black transition duration-300">
                 Courses <FaChevronDown size={12} />
               </div>
 
               <div
-                className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md py-2 w-44 transition-all duration-200 ${
+                className={`absolute left-0 top-full mt-3 bg-white shadow-xl rounded-xl py-3 w-52 border border-gray-100 transition-all duration-300 ${
                   dropdown
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
@@ -49,29 +53,32 @@ export default function Header() {
               >
                 <Link
                   href="/courses/web"
-                  className="block px-4 py-2 text-[15px] text-gray-600 hover:bg-gray-100 hover:text-black block"
+                  className="block px-5 py-3 text-[15px] text-gray-600 hover:bg-gray-50 hover:text-black transition"
                 >
                   Web Dev
                 </Link>
 
                 <Link
                   href="/courses/app"
-                  className="block px-4 py-2 text-[15px] text-gray-600 hover:bg-gray-100 hover:text-black block"
+                  className="block px-5 py-3 text-[15px] text-gray-600 hover:bg-gray-50 hover:text-black transition"
                 >
                   App Dev
                 </Link>
               </div>
             </div>
 
-            <Link href="/contact" className="hover:text-black transition block">
+            <Link
+              href="/contact"
+              className="hover:text-black transition duration-300"
+            >
               Contact
             </Link>
           </nav>
 
           {/* Mobile Button */}
           <div className="md:hidden">
-            <button onClick={() => setOpen(!open)}>
-              {open ? <FaTimes size={20} /> : <FaBars size={20} />}
+            <button onClick={() => setOpen(!open)} className="text-gray-700">
+              {open ? <FaTimes size={22} /> : <FaBars size={22} />}
             </button>
           </div>
         </div>
@@ -79,33 +86,69 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white shadow-md px-4 py-4 space-y-4">
-          <Link href="/" onClick={() => setOpen(false)}>
-            Home
-          </Link>
-          <Link href="/about" onClick={() => setOpen(false)}>
-            About
-          </Link>
-
-          <div>
-            <div
-              className="flex items-center justify-between cursor-pointer"
-              onClick={() => setDropdown(!dropdown)}
+        <div className="md:hidden bg-white shadow-lg border-t border-gray-100">
+          <div className="px-5 py-6 flex flex-col gap-5 text-[16px] font-medium text-gray-700">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="pb-3 border-b border-gray-100 hover:text-black transition"
             >
-              Courses <FaChevronDown size={12} />
+              Home
+            </Link>
+
+            <Link
+              href="/about"
+              onClick={() => setOpen(false)}
+              className="pb-3 border-b border-gray-100 hover:text-black transition"
+            >
+              About
+            </Link>
+
+            {/* Mobile Dropdown */}
+            <div className="border-b border-gray-100 pb-3">
+              <div
+                className="flex items-center justify-between cursor-pointer hover:text-black transition"
+                onClick={() => setDropdown(!dropdown)}
+              >
+                <span>Courses</span>
+
+                <FaChevronDown
+                  size={12}
+                  className={`transition-transform duration-300 ${
+                    dropdown ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+
+              {dropdown && (
+                <div className="mt-4 ml-3 flex flex-col gap-3 text-[15px] text-gray-600">
+                  <Link
+                    href="/courses/web"
+                    onClick={() => setOpen(false)}
+                    className="hover:text-black transition"
+                  >
+                    Web Dev
+                  </Link>
+
+                  <Link
+                    href="/courses/app"
+                    onClick={() => setOpen(false)}
+                    className="hover:text-black transition"
+                  >
+                    App Dev
+                  </Link>
+                </div>
+              )}
             </div>
 
-            {dropdown && (
-              <div className="ml-4 mt-2 space-y-2">
-                <Link href="/courses/web">Web Dev</Link>
-                <Link href="/courses/app">App Dev</Link>
-              </div>
-            )}
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="hover:text-black transition"
+            >
+              Contact
+            </Link>
           </div>
-
-          <Link href="/contact" onClick={() => setOpen(false)}>
-            Contact
-          </Link>
         </div>
       )}
     </header>
