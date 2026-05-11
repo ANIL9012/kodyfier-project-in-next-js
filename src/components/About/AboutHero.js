@@ -6,7 +6,6 @@ import React from "react";
 function AboutHero() {
   return (
     <section className="w-full overflow-hidden bg-white py-14 md:py-20">
-      {/* Top Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-[#07122B] sm:text-4xl md:text-5xl lg:text-[40px]">
@@ -15,7 +14,6 @@ function AboutHero() {
             Private Limited
           </h2>
 
-          {/* Green Line */}
           <div className="mx-auto mt-5 h-[7px] w-[140px] rounded-full bg-[#47C97E] sm:w-[220px]" />
 
           <p className="mx-auto mt-8 max-w-6xl text-[15px] leading-8 text-[#555] sm:text-[17px] md:text-[19px]">
@@ -30,14 +28,11 @@ function AboutHero() {
         </div>
       </div>
 
-      {/* Bottom Section Full Width */}
       <div className="mt-16 grid items-center gap-0 md:grid-cols-[0.9fr_1.5fr]">
-        {/* Left Image */}
         <div className="relative flex justify-center md:justify-start">
           {/* Background Shape */}
           <div className="absolute left-0 top-0 hidden h-full w-[280px] rounded-r-[30px] bg-[#dceee5] md:block"></div>
 
-          {/* Image */}
           <div className="relative z-10 overflow-hidden rounded-[24px] shadow-xl md:ml-24">
             <Image
               src="/images/homeimg/writing.webp"
@@ -49,14 +44,12 @@ function AboutHero() {
           </div>
         </div>
 
-        {/* Right Content */}
         <div className="bg-[#cfe3d9] px-6 py-10 md:px-12 md:py-24">
           <h2 className="text-2xl font-bold leading-snug text-[#07122B] sm:text-3xl md:text-4xl lg:text-[52px]">
             Our
             <span className="text-[#43b97f] px-4">Vision</span> At Kodyfier
           </h2>
 
-          {/* Line */}
           <div className="mt-5 mb-6 h-[10px] w-60 rounded-full bg-[#43b97f]"></div>
 
           <p className="mb-5 text-sm leading-8 text-[#555] sm:text-[16px] md:text-[17px]">
