@@ -90,7 +90,6 @@ export default function Footer() {
       {/* Main content */}
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          {/* Left — Logo + Tagline + Socials */}
           <div className="flex flex-col gap-5">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-0.5">
@@ -128,7 +127,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right — Nav Links */}
           <div className="flex flex-col gap-2">
             <p className="mb-1 text-base font-semibold text-gray-900">Links</p>
             <nav className="flex flex-wrap gap-x-6 gap-y-2 lg:flex-col lg:gap-x-0 lg:gap-y-2">
@@ -145,10 +143,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
         <hr className="my-8 border-gray-300" />
 
-        {/* Bottom — Copyright */}
         <p className="text-center text-sm text-gray-600">
           © 2025 Kodyfier, Inc. All rights reserved.
         </p>
